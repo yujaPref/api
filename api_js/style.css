@@ -1,0 +1,154 @@
+@charset "utf-8";
+.content_box {
+  border: 1px solid red;
+  width: 1200px;
+  margin: 0 auto;
+  min-height: 100vh;
+  padding: 30px 20px;
+}
+
+.cont_header {
+  margin-bottom: 60px;
+}
+
+.cont_header h1 {
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.cont {
+  border: 1px solid lightgray;
+  border-bottom: none;
+  border-top: none;
+  margin-bottom: 20px;
+}
+
+.data_list {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid lightgray;
+  cursor: pointer;
+}
+
+.list_td {
+  height: 50px;
+  text-align: center;
+  flex: 1;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.list_td span {
+  line-height: 52px;
+}
+
+.list_td:nth-child(2) {
+  flex: 2;
+}
+
+.data_list.list_header {
+  background-color: lightgray;
+  border-bottom: none;
+}
+
+.pagenation {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.page {
+  margin: 0 10px;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.page.active {
+  color: red;
+}
+
+
+
+
+
+/* detail */
+.cont_title {
+  border: 1px solid lightgray;
+  padding: 20px 30px;
+  margin-bottom: 30px;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+}
+
+.title {
+  font-size: 20px;
+  font-weight: bold;
+  line-height: -20px;
+  flex-grow: 1;
+}
+
+.id_num {
+  margin-right: 30px;
+  font-size: 14px;
+}
+
+.writer {
+  font-size: 14px;
+}
+
+.contents {
+  padding: 20px;
+  border: 1px solid lightgray;
+  margin-bottom: 50px;
+}
+
+.content_val {
+  border: 1px solid lightgray;
+  padding: 10px;
+  min-height: 200px;
+}
+
+.comments_box {
+  padding: 10px;
+}
+
+.total_comments {
+  display: block;
+  margin-bottom: 20px;
+}
+
+.comment_wrap {
+  border: 1px solid lightgray;
+  padding: 15px;
+}
+
+.commet_list {
+  border: 1px solid lightgray;
+  margin-bottom: 20px;
+  padding: 10px 20px;
+}
+
+.commet_header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  padding: 0 5px;
+}
+
+.commet_header span {
+  font-size: 14px;
+  color: lightgray;
+}
+
+.commet_header span.user_name {
+  color: #333
+}
+
+.comment_cont {
+  padding: 10px;
+  border: 1px solid lightgray;
+}
