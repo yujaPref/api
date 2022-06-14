@@ -1,6 +1,6 @@
 // 게시물 리스트
 function fetchData() {
-  let url = 'https://jsonplaceholder.typicode.com/posts';
+  let url = 'http://localhost:8000/posts';
   return fetch(url).then(response => {
     return response.json();
   });
@@ -8,7 +8,7 @@ function fetchData() {
 
 // 선택한 게시물 데이터
 function fetchDetailData(p) {
-  let url = `https://jsonplaceholder.typicode.com/posts/${p}`;
+  let url = `http://localhost:8000/posts/${p}`;
   return fetch(url).then(response => {
     return response.json();
   });
@@ -16,7 +16,7 @@ function fetchDetailData(p) {
 
 // 선택한 게시물 댓글 데이터
 function fetchDetailCommentData(p) {
-  let url = `https://jsonplaceholder.typicode.com/comments?postId=${p}`;
+  let url = `http://localhost:8000/comments?postId=${p}`;
   return fetch(url).then(response => {
     return response.json();
   });
@@ -37,7 +37,8 @@ function pageMove(el) {
 async function test() {
   let data = await fetchData();
   let dataLeng = data.length;
-  
+  console.log(data);
+
   const box = document.querySelector('.cont');
   const pagenation = document.querySelector('.pagenation');
   const header = `
@@ -57,8 +58,8 @@ async function test() {
   box.innerHTML = header;
   pagenation.innerHTML = '';
   let n = pageNum ? pageNum / 10 : 0;
-  
-  for(let i = 0; i < (dataLeng / 10); i++) {
+
+  for (let i = 0; i < (dataLeng / 10); i++) {
     pagenation.innerHTML += `
     <li class="page${i === n ? ' active' : ''}" onclick="pageMove(this)" data-id="${i}">
     <span>${i + 1}</span>
@@ -66,11 +67,11 @@ async function test() {
     `;
   };
 
-  for(let j = pageNum; j < pageNum + 10; j++) {
-    const {id, title, userId} = data[j];
+  for (let j = pageNum; j < pageNum + 10; j++) {
+    const { id, title, userId } = data[j];
 
     box.innerHTML += `
-      <li class="data_list" onclick="location.href='/api_js/detail.html?${id}'">
+      <li class="data_list" onclick="location.href='detail.html?${id}'">
         <div class="list_td">
           <span>${id}</span>
         </div>
@@ -89,7 +90,7 @@ async function test() {
 // 선택한 게시물 내용 구현
 async function detailDataFuc(v) {
   let data = await fetchDetailData(v);
-  const {id, userId, title, body} = data;
+  const { id, userId, title, body } = data;
 
   const _title = document.querySelector('.title');
   const writer = document.querySelector('.writer');
@@ -114,8 +115,8 @@ async function detailCommentsFuc(v) {
   totalEl.innerText = total ? `댓글 ${total}개` : '댓글 0개';
   commentBox.innerHTML = '';
 
-  for(let i = 0; i < total; i++) {
-    const {name, email, body} = data[i];
+  for (let i = 0; i < total; i++) {
+    const { name, email, body } = data[i];
 
     commentBox.innerHTML += `
       <li class="commet_list">
@@ -138,11 +139,12 @@ async function detailCommentsFuc(v) {
 document.addEventListener('DOMContentLoaded', () => {
   let thisfilefullname = document.URL.substring(document.URL.lastIndexOf('/') + 1, document.URL.length);
   let thisfilename = thisfilefullname.substring(thisfilefullname.lastIndexOf('.'), 0);
-  console.log(thisfilefullname);
+  console.log(document.URL);
+  console.log('dsadas');
 
-  if(thisfilename === 'index') {
+  if (thisfilename === '') {
     test();
-  } else if(thisfilename === 'detail') {
+  } else if (thisfilename === 'detail') {
     let p = thisfilefullname.split('?')[1];
     detailDataFuc(p);
     detailCommentsFuc(p);

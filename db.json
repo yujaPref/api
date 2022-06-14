@@ -1,6 +1,5 @@
 {
   "posts": [
-    [
       {
         "userId": 1,
         "id": 1,
@@ -601,10 +600,8 @@
         "title": "at nam consequatur ea labore ea harum",
         "body": "cupiditate quo est a modi nesciunt soluta\nipsa voluptas error itaque dicta in\nautem qui minus magnam et distinctio eum\naccusamus ratione error aut"
       }
-    ]
   ],
   "comments": [
-    [
       {
         "postId": 1,
         "id": 1,
@@ -4105,13 +4102,11 @@
         "email": "Emma@joanny.ca",
         "body": "perspiciatis quis doloremque\nveniam nisi eos velit sed\nid totam inventore voluptatem laborum et eveniet\naut aut aut maxime quia temporibus ut omnis"
       }
-    ]
   ],
   "profile": {
     "name": "typicode"
   },
   "users": [
-    [
       {
         "id": 1,
         "name": "Leanne Graham",
@@ -4342,6 +4337,5 @@
           "bs": "target end-to-end models"
         }
       }
-    ]
   ]
 }
