@@ -152,3 +152,84 @@
   padding: 10px;
   border: 1px solid lightgray;
 }
+
+.add_btn {
+  display: block;
+  width: 110px;
+  height: 35px;
+  text-align: center;
+  line-height: 38px;
+  border-radius: 5px;
+  background-color: deepskyblue;
+  color: #fff;
+  font-size: 15px;
+  font-weight: bold;
+  float: right;
+}
+
+
+
+/* add */
+.form_box {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 30px;
+}
+
+.form_box label {
+  width: 80px;
+  margin-bottom: 10px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.form_input {
+  padding: 3px 15px 0;
+  border: 1px solid lightgray;
+  border-radius: 5px;
+  flex-grow: 1;
+}
+
+.input {
+  height: 40px;
+  line-height: 50px;
+}
+
+.input::placeholder {
+  color: lightgray;
+}
+
+.textarea {
+  padding: 15px;
+  min-height: 300px;
+}
+
+.btn_wrap {
+  padding-top: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.submit_btn {
+  background-color: deepskyblue;
+  width: 110px;
+  height: 35px;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 15px;
+  font-weight: bold;
+  line-height: 38px;
+}
+
+
+
+
+
+
+
+
+
+
+
+

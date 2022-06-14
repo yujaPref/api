@@ -68,6 +68,7 @@ async function test() {
   };
 
   for (let j = pageNum; j < pageNum + 10; j++) {
+    console.log(data[j]);
     const { id, title, userId } = data[j];
 
     box.innerHTML += `
@@ -148,6 +149,10 @@ document.addEventListener('DOMContentLoaded', () => {
     let p = thisfilefullname.split('?')[1];
     detailDataFuc(p);
     detailCommentsFuc(p);
+  } else if(thisfilename === 'add') {
+    let data = new FormData(document.getElementById('postForm'));
+    data.append('userId', '1');
+    console.log(data, 'zdfdzd');
   };
 });
 
