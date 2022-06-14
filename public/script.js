@@ -22,6 +22,18 @@ function fetchDetailCommentData(p) {
   });
 };
 
+// 게시물 등록
+function fetchAddData(d) {
+  let url = 'http://localhost:8000/posts';
+  return fetch(url, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(d),
+  }).then(response => {location.href='index.html'});
+}
+
 // 페이지 값
 let pageNum = 0;
 
@@ -137,22 +149,33 @@ async function detailCommentsFuc(v) {
 
 
 
+async function addDataFuc() {
+  const title = document.getElementById('_title');
+  const body = document.getElementById('_body');
+  let data = {
+    userId: 1,
+    title: title.value,
+    body: body.value,
+  }
+  await fetchAddData(data);
+}
+
+
 document.addEventListener('DOMContentLoaded', () => {
   let thisfilefullname = document.URL.substring(document.URL.lastIndexOf('/') + 1, document.URL.length);
   let thisfilename = thisfilefullname.substring(thisfilefullname.lastIndexOf('.'), 0);
   console.log(document.URL);
   console.log('dsadas');
 
-  if (thisfilename === '') {
+  if (thisfilename === '' || thisfilename === 'index') {
     test();
   } else if (thisfilename === 'detail') {
     let p = thisfilefullname.split('?')[1];
     detailDataFuc(p);
     detailCommentsFuc(p);
   } else if(thisfilename === 'add') {
-    let data = new FormData(document.getElementById('postForm'));
-    data.append('userId', '1');
-    console.log(data, 'zdfdzd');
+    const submit = document.querySelector('.submit_btn');
+    submit.addEventListener('click', addDataFuc);
   };
 });
 
